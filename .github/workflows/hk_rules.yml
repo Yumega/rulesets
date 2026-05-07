@@ -1,0 +1,45 @@
+name: Update HK Ruleset
+
+on:
+  schedule:
+    - cron: '10 2 * * *' # 每天北京时间 10:10 运行，避开上一个任务的时间点
+  workflow_dispatch:      
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  merge-rules-hk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download and Process HK Rules
+        run: |
+          touch temp_hk.ruleset
+          
+          URLS=(
+            "https://raw.githubusercontent.com/Yumega/max/refs/heads/master/ios/VPN/SDR/Rule/NEWS.ruleset"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/YouTube/YouTube.list"
+          )
+
+          echo "# Last Updated: $(date)" > hk.ruleset
+          
+          for url in "${URLS[@]}"; do
+            echo "Processing $url..."
+            curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' >> temp_hk.ruleset
+          done
+
+          # 去重排序并生成最终文件
+          sort -u temp_hk.ruleset >> hk.ruleset
+          rm temp_hk.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add hk.ruleset
+          git commit -m "Update hk.ruleset - $(date)" || exit 0
+          git push
