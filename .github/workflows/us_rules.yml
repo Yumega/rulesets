@@ -1,0 +1,52 @@
+name: Update US Ruleset
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 每天北京时间上午 10 点自动更新
+  workflow_dispatch:      # 允许你随时手动点按钮更新
+
+jobs:
+  merge-rules:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Download and Process Rules
+        run: |
+          # 创建一个临时文件
+          touch temp_us.ruleset
+          
+          # 定义链接列表
+          URLS=(
+            "https://raw.githubusercontent.com/Yumega/max/master/ios/VPN/SDR/Rule/USA.ruleset"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleMusic/AppleMusic.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/OpenAI/OpenAI.list"
+            "https://raw.githubusercontent.com/Yumega/max/refs/heads/master/ios/VPN/SDR/Rule/CNgoogle.ruleset"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Google/Google.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/YouTubeMusic/YouTubeMusic.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Facebook/Facebook.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitter/Twitter.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Copilot/Copilot.list"
+          )
+
+          echo "# Last Updated: $(date)" > us.ruleset
+          
+          for url in "${URLS[@]}"; do
+            echo "Processing $url..."
+            # 下载内容，过滤掉注释行（以 # 开头的），并追加到文件
+            curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' >> temp_us.ruleset
+          done
+
+          # 去重并排序，生成最终文件
+          sort -u temp_us.ruleset >> us.ruleset
+          rm temp_us.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add us.ruleset
+          git commit -m "Update us.ruleset - $(date)" || exit 0
+          git push
