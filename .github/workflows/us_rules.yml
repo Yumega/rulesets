@@ -2,8 +2,12 @@ name: Update US Ruleset
 
 on:
   schedule:
-    - cron: '0 2 * * *' # 每天北京时间上午 10 点自动更新
-  workflow_dispatch:      # 允许你随时手动点按钮更新
+    - cron: '0 2 * * *' 
+  workflow_dispatch:      
+
+# 在全局层面设置环境变量以消除 Deprecation 警告
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   merge-rules:
@@ -14,10 +18,8 @@ jobs:
 
       - name: Download and Process Rules
         run: |
-          # 创建一个临时文件
           touch temp_us.ruleset
           
-          # 定义链接列表
           URLS=(
             "https://raw.githubusercontent.com/Yumega/max/master/ios/VPN/SDR/Rule/USA.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
@@ -35,11 +37,10 @@ jobs:
           
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
-            # 下载内容，过滤掉注释行（以 # 开头的），并追加到文件
             curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' >> temp_us.ruleset
           done
 
-          # 去重并排序，生成最终文件
+          # 去重排序
           sort -u temp_us.ruleset >> us.ruleset
           rm temp_us.ruleset
 
