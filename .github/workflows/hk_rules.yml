@@ -20,7 +20,7 @@ jobs:
           touch temp_hk.ruleset
           
           URLS=(
-            "https://raw.githubusercontent.com/Yumega/max/refs/heads/master/ios/VPN/SDR/Rule/NEWS.ruleset"
+            "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/NEWS.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/YouTube/YouTube.list"
           )
