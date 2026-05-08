@@ -24,7 +24,6 @@ jobs:
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/BOC/BOC.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/China/China.list"
-            "https://raw.githubusercontent.com/Yumega/max/master/ios/VPN/SDR/Rule/CNipv6.ruleset"
           )
 
           echo "# Last Updated: $(date)" > direct.ruleset
