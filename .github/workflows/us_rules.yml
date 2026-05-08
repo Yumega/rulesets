@@ -21,11 +21,10 @@ jobs:
           touch temp_us.ruleset
           
           URLS=(
-            "https://raw.githubusercontent.com/Yumega/max/master/ios/VPN/SDR/Rule/USA.ruleset"
+            "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/USA.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/AppleMusic/AppleMusic.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/OpenAI/OpenAI.list"
-            "https://raw.githubusercontent.com/Yumega/max/refs/heads/master/ios/VPN/SDR/Rule/CNgoogle.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Google/Google.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/YouTubeMusic/YouTubeMusic.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Facebook/Facebook.list"
