@@ -1,4 +1,4 @@
-# Last Updated: Mon May 11 05:51:51 UTC 2026
+# Last Updated: Tue May 12 05:32:08 UTC 2026
 DOMAIN,amp-api-edge.music.apple.com
 DOMAIN,amp-api.music.apple.com
 DOMAIN,amp-api.podcasts.apple.com
@@ -320,7 +320,6 @@ DOMAIN-SUFFIX,dotfacebook.net
 DOMAIN-SUFFIX,doubleclick-cn.net
 DOMAIN-SUFFIX,doubleclick.com
 DOMAIN-SUFFIX,doubleclick.net
-DOMAIN-SUFFIX,download.qatp1.net
 DOMAIN-SUFFIX,draftjs.org
 DOMAIN-SUFFIX,edgeservices.bing.com
 DOMAIN-SUFFIX,episodic.com
@@ -1140,7 +1139,6 @@ DOMAIN-SUFFIX,mizhls.ru
 DOMAIN-SUFFIX,mobilefacebook.com
 DOMAIN-SUFFIX,mobileview.page
 DOMAIN-SUFFIX,moneywithfacebook.com
-DOMAIN-SUFFIX,monitoring.qpdp1.net
 DOMAIN-SUFFIX,moodstocks.com
 DOMAIN-SUFFIX,music.apple.com
 DOMAIN-SUFFIX,myfbfans.com
@@ -1228,12 +1226,8 @@ DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,pscp.tv
 DOMAIN-SUFFIX,publishproxy.com
 DOMAIN-SUFFIX,pyrobot.org
-DOMAIN-SUFFIX,qagpublic.qatp1.net
-DOMAIN-SUFFIX,qgadmin.qcpp1.net
 DOMAIN-SUFFIX,qiao-cn.com
 DOMAIN-SUFFIX,qpx.googleflights.net
-DOMAIN-SUFFIX,qualysapi.qatp1.net
-DOMAIN-SUFFIX,qualysguard.qpdp1.net
 DOMAIN-SUFFIX,questvisual.com
 DOMAIN-SUFFIX,quickoffice.com
 DOMAIN-SUFFIX,quiksee.com
@@ -1261,7 +1255,6 @@ DOMAIN-SUFFIX,rocksdb.org
 DOMAIN-SUFFIX,run.app
 DOMAIN-SUFFIX,savethedate.foo
 DOMAIN-SUFFIX,saynow.com
-DOMAIN-SUFFIX,scanservice1.qcpp1.net
 DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,schema.org
 DOMAIN-SUFFIX,schemer.com
