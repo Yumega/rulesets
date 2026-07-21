@@ -1,20 +1,4 @@
-# Last Updated: Mon Jul 20 05:31:57 UTC 2026
-    <h1>Error 503 first byte timeout</h1>
-    <h3>Error 54113</h3>
-    <hr>
-    <p>Details: cache-chi-kigq8000137-CHI 1784525548 1010686305</p>
-    <p>Varnish cache server</p>
-    <p>first byte timeout</p>
-    <title>503 first byte timeout</title>
-  </body>
-  </head>
-  <body>
-  <head>
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-</html>
-<?xml version="1.0" encoding="utf-8"?>
-<html>
+# Last Updated: Tue Jul 21 04:59:43 UTC 2026
 DOMAIN,amp-api-edge.music.apple.com
 DOMAIN,amp-api.music.apple.com
 DOMAIN,amp-api.podcasts.apple.com
@@ -25,13 +9,16 @@ DOMAIN,api.statsig.com
 DOMAIN,assets.msn.com
 DOMAIN,audio-ssl.itunes.apple.com
 DOMAIN,audio.itunes.apple.com
+DOMAIN,audio4-ak-spotify-com.akamaized.net
 DOMAIN,bookkeeper.itunes.apple.com
 DOMAIN,browser-intake-datadoghq.com
+DOMAIN,cdn-spotify-experiments.conductrics.com
 DOMAIN,chat.openai.com.cdn.cloudflare.net
 DOMAIN,copilot.microsoft.com
 DOMAIN,gateway.bingviz.microsoft.net
 DOMAIN,gateway.bingviz.microsoftapp.net
 DOMAIN,guzzoni.apple.com
+DOMAIN,heads-ak-spotify-com.akamaized.net
 DOMAIN,in.appcenter.ms
 DOMAIN,location.microsoft.com
 DOMAIN,music.youtube.com
@@ -48,6 +35,9 @@ DOMAIN,radio-activity.itunes.apple.com
 DOMAIN,radio.itunes.apple.com
 DOMAIN,self.events.data.microsoft.com
 DOMAIN,services.bingapis.com
+DOMAIN,spotify.com.edgesuite.net
+DOMAIN,spotify.map.fastly.net
+DOMAIN,spotify.map.fastlylb.net
 DOMAIN,static.cloudflareinsights.com
 DOMAIN,streamingaudio.itunes.apple.com
 DOMAIN,sydney.bing.com
@@ -64,6 +54,7 @@ DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,openai
 DOMAIN-KEYWORD,openaicom-api
 DOMAIN-KEYWORD,recaptcha
+DOMAIN-KEYWORD,spotify
 DOMAIN-KEYWORD,twitter
 DOMAIN-SUFFIX,0emm.com
 DOMAIN-SUFFIX,1e100.net
@@ -138,6 +129,7 @@ DOMAIN-SUFFIX,atdmt2.com
 DOMAIN-SUFFIX,atlasdmt.com
 DOMAIN-SUFFIX,atlasonepoint.com
 DOMAIN-SUFFIX,atscaleconference.com
+DOMAIN-SUFFIX,audio-ak-spotify-com.akamaized.net
 DOMAIN-SUFFIX,auth0.com
 DOMAIN-SUFFIX,autodraw.com
 DOMAIN-SUFFIX,avail.googleflights.net
@@ -244,6 +236,7 @@ DOMAIN-SUFFIX,bumptop.org
 DOMAIN-SUFFIX,bumptunes.com
 DOMAIN-SUFFIX,buyingfacebooklikes.com
 DOMAIN-SUFFIX,buyoculus.com
+DOMAIN-SUFFIX,byspotify.com
 DOMAIN-SUFFIX,c.gle
 DOMAIN-SUFFIX,campuslondon.com
 DOMAIN-SUFFIX,capitalg.com
@@ -1003,6 +996,7 @@ DOMAIN-SUFFIX,hackfacebook.com
 DOMAIN-SUFFIX,hackfacebookid.com
 DOMAIN-SUFFIX,hacklang.org
 DOMAIN-SUFFIX,hdrplusdata.org
+DOMAIN-SUFFIX,heads4-ak-spotify-com.akamaized.net
 DOMAIN-SUFFIX,hey.gle
 DOMAIN-SUFFIX,hhvm.com
 DOMAIN-SUFFIX,hifacebook.info
@@ -1228,6 +1222,7 @@ DOMAIN-SUFFIX,prod-databe.floonet.goog
 DOMAIN-SUFFIX,prod.databe.floonet.goog
 DOMAIN-SUFFIX,projectara.com
 DOMAIN-SUFFIX,projectbaseline.com
+DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,pscp.tv
 DOMAIN-SUFFIX,publishproxy.com
 DOMAIN-SUFFIX,pyrobot.org
@@ -1260,6 +1255,7 @@ DOMAIN-SUFFIX,rocksdb.org
 DOMAIN-SUFFIX,run.app
 DOMAIN-SUFFIX,savethedate.foo
 DOMAIN-SUFFIX,saynow.com
+DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,schema.org
 DOMAIN-SUFFIX,schemer.com
 DOMAIN-SUFFIX,screenwisetrends.com
@@ -1274,6 +1270,20 @@ DOMAIN-SUFFIX,snapseed.com
 DOMAIN-SUFFIX,solveforx.com
 DOMAIN-SUFFIX,sportsfacebook.com
 DOMAIN-SUFFIX,sportstream.com
+DOMAIN-SUFFIX,spoti.fi
+DOMAIN-SUFFIX,spotify-com.akamaized.net
+DOMAIN-SUFFIX,spotify-everywhere.com
+DOMAIN-SUFFIX,spotify.app.link
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spotify.design
+DOMAIN-SUFFIX,spotifycdn.com
+DOMAIN-SUFFIX,spotifycdn.net
+DOMAIN-SUFFIX,spotifycharts.com
+DOMAIN-SUFFIX,spotifycodes.com
+DOMAIN-SUFFIX,spotifyforbrands.com
+DOMAIN-SUFFIX,spotifyjobs.com
+DOMAIN-SUFFIX,spotifynewsroom.jp
+DOMAIN-SUFFIX,spotilocal.com
 DOMAIN-SUFFIX,stadia.dev
 DOMAIN-SUFFIX,staging-controlbe.floonet.goog
 DOMAIN-SUFFIX,staging-databe.floonet.goog
@@ -1307,6 +1317,7 @@ DOMAIN-SUFFIX,thinkquarterly.com
 DOMAIN-SUFFIX,thinkwithgoogle.com
 DOMAIN-SUFFIX,tiltbrush.com
 DOMAIN-SUFFIX,toplayerserver.com
+DOMAIN-SUFFIX,tospotify.com
 DOMAIN-SUFFIX,tubi.video
 DOMAIN-SUFFIX,tunein.com
 DOMAIN-SUFFIX,turn.livekit.cloud
@@ -1411,6 +1422,7 @@ DOMAIN-SUFFIX,zynamics.com
 IP-ASN,14061,no-resolve
 IP-ASN,20473,no-resolve
 IP-ASN,32934,no-resolve
+IP-CIDR,104.154.127.126/32,no-resolve
 IP-CIDR,108.168.176.192/26,no-resolve
 IP-CIDR,108.168.177.0/27,no-resolve
 IP-CIDR,108.168.180.96/27,no-resolve
@@ -1439,6 +1451,7 @@ IP-CIDR,3.123.36.126/32,no-resolve
 IP-CIDR,31.13.64.0/18,no-resolve
 IP-CIDR,35.157.215.84/32,no-resolve
 IP-CIDR,35.157.217.255/32,no-resolve
+IP-CIDR,35.186.224.47/32,no-resolve
 IP-CIDR,52.58.209.134/32,no-resolve
 IP-CIDR,54.162.243.80/32,no-resolve
 IP-CIDR,54.173.34.141/32,no-resolve
@@ -1453,5 +1466,6 @@ USER-AGENT,*com.google.Drive*
 USER-AGENT,*com.google.ios.youtubemusic*
 USER-AGENT,Google.Drive*
 USER-AGENT,Music*
+USER-AGENT,Spotify*
 USER-AGENT,YouTubeMusic*
 USER-AGENT,com.google.ios.youtubemusic*
