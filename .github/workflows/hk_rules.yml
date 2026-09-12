@@ -22,7 +22,8 @@ jobs:
           URLS=(
             "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/NEWS.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
-            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/YouTube/YouTube.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Facebook/Facebook.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/Twitter/Twitter.list"
           )
 
           echo "# Last Updated: $(date)" > hk.ruleset
