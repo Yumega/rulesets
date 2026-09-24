@@ -1,7 +1,25 @@
+name: Update Direct Ruleset
+
+on:
+  schedule:
+    - cron: '10 4 * * *'
+  workflow_dispatch:
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  merge-rules-direct:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
       - name: Download and Process Direct Rules
         run: |
           touch temp_direct.ruleset
-          
+
           URLS=(
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/ByteDance/ByteDance.list"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list"
@@ -10,13 +28,25 @@
           )
 
           echo "# Last Updated: $(date)" > direct.ruleset
-          
+
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
-            curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' | sed 's/,DIRECT//g' >> temp_direct.ruleset
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^\s*$' \
+              | sed 's/,DIRECT//g' \
+              >> temp_direct.ruleset
           done
 
           # 去重排序，不添加 ,DIRECT
           sort -u temp_direct.ruleset >> direct.ruleset
-          
+
           rm temp_direct.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add direct.ruleset
+          git commit -m "Update direct.ruleset - $(date)" || exit 0
+          git push
