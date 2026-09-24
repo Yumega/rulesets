@@ -1,20 +1,3 @@
-name: Update Direct Ruleset
-
-on:
-  schedule:
-    - cron: '10 4 * * *'
-  workflow_dispatch:      
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
-jobs:
-  merge-rules-direct:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
       - name: Download and Process Direct Rules
         run: |
           touch temp_direct.ruleset
@@ -30,19 +13,10 @@ jobs:
           
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
-            # 下载内容，移除注释和空行，并统一移除可能存在的 ",DIRECT" 后缀以便统一去重
             curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' | sed 's/,DIRECT//g' >> temp_direct.ruleset
           done
 
-          # 去重排序，并在每行末尾加上 ,DIRECT（如果你的软件需要这个后缀）
-          # 如果你不需要末尾的 ,DIRECT，请删掉下面的 | sed 's/$/,DIRECT/'
-          sort -u temp_direct.ruleset | sed 's/$/,DIRECT/' >> direct.ruleset
+          # 去重排序，不添加 ,DIRECT
+          sort -u temp_direct.ruleset >> direct.ruleset
+          
           rm temp_direct.ruleset
-
-      - name: Commit and Push
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add direct.ruleset
-          git commit -m "Update direct.ruleset - $(date)" || exit 0
-          git push
