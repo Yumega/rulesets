@@ -5,10 +5,6 @@ on:
     - cron: '0 2 * * *' 
   workflow_dispatch:      
 
-# 在全局层面设置环境变量以消除 Deprecation 警告
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   merge-rules:
     runs-on: ubuntu-latest
