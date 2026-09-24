@@ -5,9 +5,6 @@ on:
     - cron: '10 4 * * *'
   workflow_dispatch:
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   merge-rules-direct:
     runs-on: ubuntu-latest
