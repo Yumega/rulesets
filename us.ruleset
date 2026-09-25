@@ -1,4 +1,4 @@
-# Last Updated: Thu Sep 24 11:34:52 UTC 2026
+# Last Updated: Fri Sep 25 06:50:46 UTC 2026
 DOMAIN,amp-api-edge.music.apple.com
 DOMAIN,amp-api.music.apple.com
 DOMAIN,amp-api.podcasts.apple.com
@@ -42,7 +42,6 @@ DOMAIN,static.cloudflareinsights.com
 DOMAIN,streamingaudio.itunes.apple.com
 DOMAIN,sydney.bing.com
 DOMAIN,voice.telephony.goog
-DOMAIN,www-cdn.icloud.com.akadns.net
 DOMAIN,www.bing.com
 DOMAIN-KEYWORD,appspot
 DOMAIN-KEYWORD,blogspot
@@ -103,7 +102,6 @@ DOMAIN-SUFFIX,apple-relay.apple.com
 DOMAIN-SUFFIX,apple-relay.cloudflare.com
 DOMAIN-SUFFIX,apple-relay.fastly-edge.com
 DOMAIN-SUFFIX,applemusic.com
-DOMAIN-SUFFIX,applemx-icloud.com
 DOMAIN-SUFFIX,apps5.oingo.com
 DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,apture.com
@@ -615,32 +613,12 @@ DOMAIN-SUFFIX,hwcdn.net
 DOMAIN-SUFFIX,hwgo.com
 DOMAIN-SUFFIX,iam.soy
 DOMAIN-SUFFIX,iamremarkable.org
-DOMAIN-SUFFIX,icloud-content.com
-DOMAIN-SUFFIX,icloud-isupport.com
-DOMAIN-SUFFIX,icloud-sandbox.com
-DOMAIN-SUFFIX,icloud.com
-DOMAIN-SUFFIX,icloud.org
-DOMAIN-SUFFIX,icloudads.net
-DOMAIN-SUFFIX,icloudbox.net
-DOMAIN-SUFFIX,icloudbrowser.net
-DOMAIN-SUFFIX,icloude.com
-DOMAIN-SUFFIX,icloudhome.com
-DOMAIN-SUFFIX,icloudmail.net
-DOMAIN-SUFFIX,icloudmusic.net
-DOMAIN-SUFFIX,icloudnet.net
-DOMAIN-SUFFIX,icloudo.com
-DOMAIN-SUFFIX,icloudo.net
-DOMAIN-SUFFIX,icloudos.net
-DOMAIN-SUFFIX,icloudpay.net
-DOMAIN-SUFFIX,icloudsecure.net
-DOMAIN-SUFFIX,icloudsetup.com
 DOMAIN-SUFFIX,identrust.com
 DOMAIN-SUFFIX,igoogle.com
 DOMAIN-SUFFIX,iheart.com
 DOMAIN-SUFFIX,impermium.com
 DOMAIN-SUFFIX,intercom.io
 DOMAIN-SUFFIX,intercomcdn.com
-DOMAIN-SUFFIX,ios-icloud.com
 DOMAIN-SUFFIX,itasoftware.com
 DOMAIN-SUFFIX,j2objc.org
 DOMAIN-SUFFIX,jibemobile.com
@@ -658,15 +636,12 @@ DOMAIN-SUFFIX,llnwi.net
 DOMAIN-SUFFIX,madewithcode.com
 DOMAIN-SUFFIX,material.io
 DOMAIN-SUFFIX,mdialog.com
-DOMAIN-SUFFIX,me.com
 DOMAIN-SUFFIX,meet.new
 DOMAIN-SUFFIX,mfg-inspector.com
 DOMAIN-SUFFIX,mizhls.ru
 DOMAIN-SUFFIX,mobileview.page
 DOMAIN-SUFFIX,moodstocks.com
 DOMAIN-SUFFIX,music.apple.com
-DOMAIN-SUFFIX,myicloud.net
-DOMAIN-SUFFIX,mylcloud.net
 DOMAIN-SUFFIX,nbcuni.com
 DOMAIN-SUFFIX,near.by
 DOMAIN-SUFFIX,nest.com
@@ -831,7 +806,6 @@ DOMAIN-SUFFIX,womenwill.in
 DOMAIN-SUFFIX,womenwill.mx
 DOMAIN-SUFFIX,www.destinationurl.com
 DOMAIN-SUFFIX,www.pxcc.com
-DOMAIN-SUFFIX,wwwicloud.com
 DOMAIN-SUFFIX,x.company
 DOMAIN-SUFFIX,x.team
 DOMAIN-SUFFIX,xn--9kr7l.com
