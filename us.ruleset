@@ -1,4 +1,4 @@
-# Last Updated: Fri Sep 25 06:50:46 UTC 2026
+# Last Updated: Fri Sep 25 14:02:56 UTC 2026
 DOMAIN,amp-api-edge.music.apple.com
 DOMAIN,amp-api.music.apple.com
 DOMAIN,amp-api.podcasts.apple.com
@@ -45,7 +45,6 @@ DOMAIN,voice.telephony.goog
 DOMAIN,www.bing.com
 DOMAIN-KEYWORD,appspot
 DOMAIN-KEYWORD,blogspot
-DOMAIN-KEYWORD,cnn-cnninternational-1-eu.rakuten.wurl.tv
 DOMAIN-KEYWORD,gmail
 DOMAIN-KEYWORD,google
 DOMAIN-KEYWORD,openai
@@ -73,11 +72,8 @@ DOMAIN-SUFFIX,adwords-community.com
 DOMAIN-SUFFIX,adwords.com
 DOMAIN-SUFFIX,adwordsexpress.com
 DOMAIN-SUFFIX,ai.com
-DOMAIN-SUFFIX,akamaized.net
 DOMAIN-SUFFIX,algolia.net
 DOMAIN-SUFFIX,amagi.tv
-DOMAIN-SUFFIX,amazonaws.com
-DOMAIN-SUFFIX,amazontrust.com
 DOMAIN-SUFFIX,amp.dev
 DOMAIN-SUFFIX,amperwave.net
 DOMAIN-SUFFIX,ampproject.com
@@ -211,7 +207,6 @@ DOMAIN-SUFFIX,byspotify.com
 DOMAIN-SUFFIX,c.gle
 DOMAIN-SUFFIX,campuslondon.com
 DOMAIN-SUFFIX,capitalg.com
-DOMAIN-SUFFIX,cbsnews.com
 DOMAIN-SUFFIX,certificate-transparency.dev
 DOMAIN-SUFFIX,certificate-transparency.org
 DOMAIN-SUFFIX,challenges.cloudflare.com
@@ -234,7 +229,6 @@ DOMAIN-SUFFIX,clickserve.cc-dt.com
 DOMAIN-SUFFIX,clickserver.googleads.com
 DOMAIN-SUFFIX,client-api.arkoselabs.com
 DOMAIN-SUFFIX,cloudburstresearch.com
-DOMAIN-SUFFIX,cloudfront.net
 DOMAIN-SUFFIX,cloudfunctions.net
 DOMAIN-SUFFIX,cloudproxy.app
 DOMAIN-SUFFIX,cloudrobotics.com
@@ -272,7 +266,6 @@ DOMAIN-SUFFIX,dialogflow.com
 DOMAIN-SUFFIX,digisfera.com
 DOMAIN-SUFFIX,digitalassetlinks.org
 DOMAIN-SUFFIX,digitalattackmap.com
-DOMAIN-SUFFIX,dnsleaktest.com
 DOMAIN-SUFFIX,doubleclick-cn.net
 DOMAIN-SUFFIX,doubleclick.com
 DOMAIN-SUFFIX,doubleclick.net
@@ -642,7 +635,6 @@ DOMAIN-SUFFIX,mizhls.ru
 DOMAIN-SUFFIX,mobileview.page
 DOMAIN-SUFFIX,moodstocks.com
 DOMAIN-SUFFIX,music.apple.com
-DOMAIN-SUFFIX,nbcuni.com
 DOMAIN-SUFFIX,near.by
 DOMAIN-SUFFIX,nest.com
 DOMAIN-SUFFIX,neverware.com
@@ -817,7 +809,6 @@ DOMAIN-SUFFIX,xn--gogl-1nd42e.com
 DOMAIN-SUFFIX,xn--ngstr-lra8j.com
 DOMAIN-SUFFIX,xn--p8j9a0d9c9a.xn--q9jyb4c
 DOMAIN-SUFFIX,xplr.co
-DOMAIN-SUFFIX,xumo.com
 DOMAIN-SUFFIX,zukunftswerkstatt.de
 DOMAIN-SUFFIX,zynamics.com
 IP-ASN,14061,no-resolve
