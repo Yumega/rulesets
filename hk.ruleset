@@ -1,13 +1,11 @@
-# Last Updated: Sat Sep 26 07:35:43 UTC 2026
+# Last Updated: Sat Sep 26 08:59:21 UTC 2026
 DOMAIN,aod-dash-uk-live.akamaized.net
 DOMAIN,aod-hls-uk-live.akamaized.net
 DOMAIN,api.imem.app
 DOMAIN,api.swiftgram.app
 DOMAIN,as-dash-uk-live.akamaized.net
 DOMAIN,as-hls-uk-live.akamaized.net
-DOMAIN,browserleaks.com
-DOMAIN,browserleaks.org
-DOMAIN,ipinfo.io
+DOMAIN,myip.com
 DOMAIN,vod-dash-uk-live.akamaized.net
 DOMAIN,vod-dash-ww-live.akamaized.net
 DOMAIN,vod-hls-uk-live.akamaized.net
@@ -83,8 +81,6 @@ DOMAIN-SUFFIX,crowdtangle.com
 DOMAIN-SUFFIX,dacebook.com
 DOMAIN-SUFFIX,dependabot.com
 DOMAIN-SUFFIX,dlfacebook.com
-DOMAIN-SUFFIX,dns4.browserleaks.org
-DOMAIN-SUFFIX,dns6.browserleaks.org
 DOMAIN-SUFFIX,dotfacebook.com
 DOMAIN-SUFFIX,dotfacebook.net
 DOMAIN-SUFFIX,draftjs.org
