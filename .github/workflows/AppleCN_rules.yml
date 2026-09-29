@@ -1,0 +1,43 @@
+name: Update AppleCN Ruleset
+on:
+schedule:
+- cron: '50 4 * * *'
+workflow_dispatch:
+jobs:
+update-apple-rules:
+runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Download and Process AppleCN Rules
+        run: |
+          touch temp_apple.ruleset
+
+          URLS=(
+            "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf"
+          )
+
+          echo "# Last Updated: $(date)" > AppleCN.ruleset
+
+          for url in "${URLS[@]}"; do
+            echo "Processing $url..."
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^\s*$' \
+              | sed -E 's/^server=\/([^\/]+)\/.*$/DOMAIN,\1/' \
+              >> temp_apple.ruleset
+          done
+
+          # 去重排序，写入最终文件
+          sort -u temp_apple.ruleset >> AppleCN.ruleset
+
+          rm temp_apple.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add AppleCN.ruleset
+          git commit -m "Update AppleCN.ruleset - $(date)" || exit 0
+          git push
