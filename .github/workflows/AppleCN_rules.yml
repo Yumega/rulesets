@@ -1,11 +1,14 @@
 name: Update AppleCN Ruleset
+
 on:
-schedule:
-- cron: '50 4 * * *'
-workflow_dispatch:
+  schedule:
+    - cron: '50 4 * * *'
+  workflow_dispatch:
+
 jobs:
-update-apple-rules:
-runs-on: ubuntu-24.04
+  update-apple-rules:
+    runs-on: ubuntu-24.04
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -22,9 +25,10 @@ runs-on: ubuntu-24.04
 
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
+
             curl -sL "$url" \
               | grep -v '^#' \
-              | grep -v '^\s*$' \
+              | grep -v '^[[:space:]]*$' \
               | sed -E 's/^server=\/([^\/]+)\/.*$/DOMAIN,\1/' \
               >> temp_apple.ruleset
           done
@@ -37,7 +41,10 @@ runs-on: ubuntu-24.04
       - name: Commit and Push
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git add AppleCN.ruleset
+
           git commit -m "Update AppleCN.ruleset - $(date)" || exit 0
+
           git push
