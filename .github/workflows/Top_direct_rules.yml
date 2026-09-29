@@ -1,0 +1,49 @@
+name: Update TopDirect Ruleset
+
+on:
+  schedule:
+    - cron: '50 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  merge-rules-direct:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Download and Process Direct Rules
+        run: |
+          touch temp_direct.ruleset
+
+          URLS=(
+            "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/TopDirect.ruleset"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/WeChat/WeChat.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/DouYin/DouYin.list"
+            "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Shadowrocket/XiaoHongShu/XiaoHongShu.list"
+          )
+
+          echo "# Last Updated: $(date)" > TopDirect.ruleset
+
+          for url in "${URLS[@]}"; do
+            echo "Processing $url..."
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^\s*$' \
+              | sed 's/,DIRECT//g' \
+              >> temp_direct.ruleset
+          done
+
+          # 去重排序，写入最终文件
+          sort -u temp_direct.ruleset >> TopDirect.ruleset
+
+          rm temp_direct.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add TopDirect.ruleset
+          git commit -m "Update TopDirect.ruleset - $(date)" || exit 0
+          git push
