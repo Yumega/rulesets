@@ -18,7 +18,7 @@ jobs:
           touch temp_block.ruleset
 
           URLS=(
-            "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockclash.list"
+            "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockclashlite.list"
           )
 
           for url in "${URLS[@]}"; do
