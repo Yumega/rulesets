@@ -2,12 +2,13 @@ name: Update US Ruleset
 
 on:
   schedule:
-    - cron: '0 2 * * *' 
-  workflow_dispatch:      
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
   merge-rules:
     runs-on: ubuntu-24.04
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
@@ -15,7 +16,7 @@ jobs:
       - name: Download and Process Rules
         run: |
           touch temp_us.ruleset
-          
+
           URLS=(
             "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/USA.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Spotify/Spotify.list"
@@ -27,15 +28,23 @@ jobs:
           )
 
           echo "# Last Updated: $(date)" > us.ruleset
-          
+
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
-            curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' >> temp_us.ruleset
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^[[:space:]]*$' \
+              >> temp_us.ruleset
           done
 
+          # 删除 DOMAIN-KEYWORD 和 USER-AGENT 整行规则
+          grep -v -E '^(DOMAIN-KEYWORD|USER-AGENT),' temp_us.ruleset \
+            > temp_us_filtered.ruleset
+
           # 去重排序
-          sort -u temp_us.ruleset >> us.ruleset
-          rm temp_us.ruleset
+          sort -u temp_us_filtered.ruleset >> us.ruleset
+
+          rm temp_us.ruleset temp_us_filtered.ruleset
 
       - name: Commit and Push
         run: |
