@@ -1,4 +1,4 @@
-# Last Updated: Tue Sep 29 10:37:30 UTC 2026
+# Last Updated: Wed Sep 30 05:14:42 UTC 2026
 DOMAIN,analytics.strava.com
 DOMAIN,appldnld-cdn.apple.com.akadns.net
 DOMAIN,appldnld-cdn.origin-apple.com.akadns.net
@@ -87,15 +87,6 @@ DOMAIN,xp.apple.com
 DOMAIN,xp.apple.com.akadns.net
 DOMAIN,xp.apple.com.mwcname.com
 DOMAIN,xp.g.aaplimg.com
-DOMAIN-KEYWORD,.tmall.com
-DOMAIN-KEYWORD,alicdn
-DOMAIN-KEYWORD,alipay
-DOMAIN-KEYWORD,aliyun
-DOMAIN-KEYWORD,baidu
-DOMAIN-KEYWORD,beplay
-DOMAIN-KEYWORD,microsoft
-DOMAIN-KEYWORD,officecdn
-DOMAIN-KEYWORD,taobao
 DOMAIN-SUFFIX,00cdn.com
 DOMAIN-SUFFIX,0123456789.com
 DOMAIN-SUFFIX,0379home.com
@@ -4119,4 +4110,3 @@ IP-CIDR6,2a0b:b580::/48,no-resolve
 IP-CIDR6,2a0b:b581::/48,no-resolve
 IP-CIDR6,2a0b:b582::/48,no-resolve
 IP-CIDR6,2a0b:b583::/48,no-resolve
-USER-AGENT,TikTok*
