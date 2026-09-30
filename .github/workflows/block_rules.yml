@@ -1,0 +1,46 @@
+name: Update Block Ruleset
+
+on:
+  schedule:
+    - cron: '20 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  merge-rules-block:
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+
+      - name: Download and Process Block Rules
+        run: |
+          touch temp_block.ruleset
+
+          URLS=(
+            "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockclash.list"
+          )
+
+          echo "# Last Updated: $(date)" > block.ruleset
+
+          for url in "${URLS[@]}"; do
+            echo "Processing $url..."
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^[[:space:]]*$' \
+              | sed 's/,REJECT-DROP$//' \
+              >> temp_block.ruleset
+          done
+
+          # 去重排序
+          sort -u temp_block.ruleset >> block.ruleset
+
+          rm temp_block.ruleset
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add block.ruleset
+          git commit -m "Update block.ruleset - $(date)" || exit 0
+          git push
