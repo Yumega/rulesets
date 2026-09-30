@@ -31,15 +31,19 @@ jobs:
             echo "Processing $url..."
             curl -sL "$url" \
               | grep -v '^#' \
-              | grep -v '^\s*$' \
+              | grep -v '^[[:space:]]*$' \
               | sed 's/,DIRECT//g' \
               >> temp_direct.ruleset
           done
 
-          # 去重排序，不添加 ,DIRECT
-          sort -u temp_direct.ruleset >> direct.ruleset
+          # 去除 DOMAIN-KEYWORD 和 USER-AGENT 整行规则
+          grep -v -E '^(DOMAIN-KEYWORD|USER-AGENT),' temp_direct.ruleset \
+            > temp_direct_filtered.ruleset
 
-          rm temp_direct.ruleset
+          # 去重排序，不添加 ,DIRECT
+          sort -u temp_direct_filtered.ruleset >> direct.ruleset
+
+          rm temp_direct.ruleset temp_direct_filtered.ruleset
 
       - name: Commit and Push
         run: |
