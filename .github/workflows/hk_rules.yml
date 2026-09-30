@@ -2,8 +2,8 @@ name: Update HK Ruleset
 
 on:
   schedule:
-    - cron: '10 2 * * *' # 每天北京时间 10:10 运行，避开上一个任务的时间点
-  workflow_dispatch:      
+    - cron: '10 2 * * *' # 每天北京时间 10:10 运行
+  workflow_dispatch:
 
 jobs:
   merge-rules-hk:
@@ -15,7 +15,7 @@ jobs:
       - name: Download and Process HK Rules
         run: |
           touch temp_hk.ruleset
-          
+
           URLS=(
             "https://raw.githubusercontent.com/Yumega/iLab/refs/heads/master/ios/VPN/SDR/Rule/NEWS.ruleset"
             "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Telegram/Telegram.list"
@@ -25,15 +25,23 @@ jobs:
           )
 
           echo "# Last Updated: $(date)" > hk.ruleset
-          
+
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
-            curl -sL "$url" | grep -v '^#' | grep -v '^\s*$' >> temp_hk.ruleset
+            curl -sL "$url" \
+              | grep -v '^#' \
+              | grep -v '^[[:space:]]*$' \
+              >> temp_hk.ruleset
           done
 
+          # 删除 DOMAIN-KEYWORD 和 USER-AGENT 整行规则
+          grep -v -E '^(DOMAIN-KEYWORD|USER-AGENT),' temp_hk.ruleset \
+            > temp_hk_filtered.ruleset
+
           # 去重排序并生成最终文件
-          sort -u temp_hk.ruleset >> hk.ruleset
-          rm temp_hk.ruleset
+          sort -u temp_hk_filtered.ruleset >> hk.ruleset
+
+          rm temp_hk.ruleset temp_hk_filtered.ruleset
 
       - name: Commit and Push
         run: |
