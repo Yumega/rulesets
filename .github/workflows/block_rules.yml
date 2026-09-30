@@ -18,7 +18,7 @@ jobs:
           touch temp_block.ruleset
 
           URLS=(
-            "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockclash.list"
+            "你的规则源URL"
           )
 
           echo "# Last Updated: $(date)" > block.ruleset
@@ -28,6 +28,7 @@ jobs:
             curl -sL "$url" \
               | grep -v '^#' \
               | grep -v '^[[:space:]]*$' \
+              | grep -v '^\[Rule\]$' \
               | sed 's/,REJECT-DROP$//' \
               >> temp_block.ruleset
           done
