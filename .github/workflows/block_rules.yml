@@ -18,29 +18,39 @@ jobs:
           touch temp_block.ruleset
 
           URLS=(
-            "https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockclash.list"
+            "你的规则源URL"
           )
 
           for url in "${URLS[@]}"; do
             echo "Processing $url..."
 
-            curl -fsSL "$url" \
-              | sed '1{/^\[Rule\]$/d;}' \
-              | sed 's/,REJECT-DROP$//' \
+            curl -fsSL --retry 3 --connect-timeout 15 --max-time 120 "$url" \
               >> temp_block.ruleset
           done
 
-          # 检查下载后的规则文件是否为空
+          # 检查是否成功下载规则
           if [ ! -s temp_block.ruleset ]; then
             echo "ERROR: No rules downloaded!"
             exit 1
           fi
 
-          # 删除注释和空行
-          sed -i '/^#/d; /^[[:space:]]*$/d' temp_block.ruleset
+          # 删除：
+          # 1. 所有 [Rule] 整行
+          # 2. 所有注释行
+          # 3. 所有空行
+          # 4. 每行末尾的 ,REJECT-DROP
+          sed -i \
+            -e '/^[[:space:]]*\[Rule\][[:space:]]*$/d' \
+            -e '/^[[:space:]]*#/d' \
+            -e '/^[[:space:]]*$/d' \
+            -e 's/,REJECT-DROP$//' \
+            temp_block.ruleset
 
           # 去重排序并生成最终文件
           sort -u temp_block.ruleset > block.ruleset
+
+          # 再次确保最终文件不存在 [Rule]
+          sed -i '/^[[:space:]]*\[Rule\][[:space:]]*$/d' block.ruleset
 
           rm temp_block.ruleset
 
