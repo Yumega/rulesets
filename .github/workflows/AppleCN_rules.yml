@@ -2,7 +2,7 @@ name: Update AppleCN Ruleset
 
 on:
   schedule:
-    - cron: '50 4 * * *'
+    - cron: '0 19 * * 2'
   workflow_dispatch:
 
 jobs:
