@@ -2,7 +2,7 @@ name: Update US Ruleset
 
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 18 * * 4'
   workflow_dispatch:
 
 jobs:
