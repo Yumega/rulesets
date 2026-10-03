@@ -2,7 +2,7 @@ name: Update Direct Ruleset
 
 on:
   schedule:
-    - cron: '10 4 * * *'
+    - cron: '0 20 * * 5'
   workflow_dispatch:
 
 jobs:
