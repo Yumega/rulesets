@@ -1,8 +1,7 @@
 name: Update TopDirect Ruleset
-
 on:
   schedule:
-    - cron: '50 4 * * *'
+    - cron: '0 18 * * 0'
   workflow_dispatch:
 
 jobs:
