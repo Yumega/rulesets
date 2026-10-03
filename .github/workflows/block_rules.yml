@@ -2,7 +2,7 @@ name: Update Block Ruleset
 
 on:
   schedule:
-    - cron: '20 2 * * *'
+    - cron: '20 18 * * 1'
   workflow_dispatch:
 
 jobs:
